@@ -3,6 +3,10 @@ const app = express();
 
 const path = require('path');
 
+var exphbs = require("express-handlebars");
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+
 const routes = require("./controllers/burgers_controller");
 
 const connection = require('./config/connection');

@@ -1,4 +1,4 @@
-var mysql      = require('mysql');
+var mysql = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
@@ -6,7 +6,10 @@ var connection = mysql.createConnection({
   database : 'burgers_db'
 });
  
-connection.connect();
+connection.connect(function(err) {
+  if (err) throw err;
+  console.log("connected as id " + connection.threadId);
+});
 
 
 //export values and functions to be used in other files

@@ -1,4 +1,13 @@
-const connection = require('./config/connection');
+const connection = require('./connection');
+
+var orm = {
+    all: function (cb){
+        connection.query('SELECT * FROM burgers', function (error, results) {
+            if (error) throw error;
+            cb(results);
+        });
+    }
+}
 
 function selectAll(){
     connection.query('SELECT * FROM burgers', function (error, results) {
@@ -21,9 +30,13 @@ function updateOne(burgID){
     });    
 }
 
+module.exports = orm;
+
+/* 
 module.exports = {
+
     selectAll = selectAll,
     insertOne = insertOne,
     updateOne = updateOne
 }
-
+*/
