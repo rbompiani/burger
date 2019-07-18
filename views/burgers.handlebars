@@ -1,12 +1,12 @@
-<ul>
+<div id="uneaten">
 {{#each burgers}}
-    <li>{{this.id}}. {{this.burger_name}} <button>NOM this burger</button></li>
+    <form action="/eatBurger/{{this.id}}" method="POST">{{this.id}}. {{this.burger_name}} <input type="submit" value="NOM"></form>
 {{/each}}    
-</ul>
+</div>
 
 
-<ul>
+<div id="eaten">
 {{#each emptyBurgers}}
     <li>{{pet}}. {{burger_name}} <button>NOM this burger</button></li>
 {{/each}}    
-</ul>
+</div>
