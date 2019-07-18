@@ -1,19 +1,21 @@
-<div id="uneaten">
-{{#each burgers}}
-    {{#unless this.devoured}}
-        <form action="/eatBurger/{{this.id}}" method="POST">
-            {{this.id}}. {{this.burger_name}} 
-            <input type="submit" value="NOM">
-        </form>
-    {{/unless}}
-{{/each}}    
-</div>
+<article id="uneaten">
+    <h3>Burger Wishlist</h3>
+    {{#each burgers}}
+        {{#unless this.devoured}}
+            <form class="burgers" action="/eatBurger/{{this.id}}" method="POST">
+                <span>{{this.id}}. {{this.burger_name}}</span> 
+                <input type="submit" value="NOM">
+            </form>
+        {{/unless}}
+    {{/each}}    
+</article>
 
 
-<div id="eaten">
-{{#each burgers}}
-    {{#if this.devoured}}
-        <div>{{id}}. {{burger_name}}</div>
-    {{/if}}
-{{/each}}    
-</div>
+<article id="eaten">
+    <h3>Burgers You've Tried</h3>
+    {{#each burgers}}
+        {{#if this.devoured}}
+            <div>{{id}}. {{burger_name}}</div>
+        {{/if}}
+    {{/each}}    
+</article>

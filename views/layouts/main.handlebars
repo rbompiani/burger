@@ -3,16 +3,28 @@
 <head>
     <meta charset="utf-8">
     <title>Eat Da Burger</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
 <body>
-    <h1>Eat Da Burger</h1>
-    {{{body}}}
- 
-    <form action="/newBurger" target="_blank" method="POST">
-        Enter a new burger to eat:<br>
-        <input type="text" name="newBurger" placeholder="New Burger Here">
-        <br>
-        <input type="submit" value="Submit">
-    </form>
+    <main class="grid-container">
+        <header>
+            <img src="burger.png">
+            <h1>Eat Da Burger</h1>            
+        </header>
+
+        <section>
+            {{{body}}}    
+        </section>
+        
+    
+        <form class="newBurg" action="/newBurger" target="_blank" method="POST">
+            Add a burger to your wishlist:<br>
+            <input type="text" name="newBurger" placeholder="New Burger Here">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+
+    </main>
+
 </body>
 </html>
