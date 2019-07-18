@@ -12,7 +12,8 @@ const routes = require("./controllers/burgers_controller");
 
 const connection = require('./config/connection');
 
-app.listen(process.env.PORT || 3000, function(){
+var PORT = process.env.PORT || 3000;
+app.listen(PORT, function(){
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
