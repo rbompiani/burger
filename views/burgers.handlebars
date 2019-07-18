@@ -1,12 +1,19 @@
 <div id="uneaten">
 {{#each burgers}}
-    <form action="/eatBurger/{{this.id}}" method="POST">{{this.id}}. {{this.burger_name}} <input type="submit" value="NOM"></form>
+    {{#unless this.devoured}}
+        <form action="/eatBurger/{{this.id}}" method="POST">
+            {{this.id}}. {{this.burger_name}} 
+            <input type="submit" value="NOM">
+        </form>
+    {{/unless}}
 {{/each}}    
 </div>
 
 
 <div id="eaten">
-{{#each emptyBurgers}}
-    <li>{{pet}}. {{burger_name}} <button>NOM this burger</button></li>
+{{#each burgers}}
+    {{#if this.devoured}}
+        <div>{{id}}. {{burger_name}}</div>
+    {{/if}}
 {{/each}}    
 </div>
